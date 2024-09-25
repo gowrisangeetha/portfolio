@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        body {
+            background: url('https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1724630400&semt=ais_hybrid.jpg') no-repeat center center/cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.6); /* Transparent background for the header */
+            padding: 10px 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a, .button-gfc, .button-cv {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent box */
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover, .button-gfc:hover, .button-cv:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly less transparent on hover */
+        }
+        .hidden { display: none; }
+        .description-section {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px;
+        }
+        .image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        ul, ol {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" id="home-btn">HOME</a></li>
+                <li><a href="#" id="about-btn">ABOUT</a></li>
+                <li><a href="#" id="projects-btn">PROJECTS</a></li>
+                <li><a href="#" id="skills-btn">SKILLS</a></li>
+                <li><a href="#" id="contact-btn">CONTACT</a></li>
+                <li><button class="button-gfc">Get Free Consultation</button></li>
+                <li><button class="button-cv">DOWNLOAD CV</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Hello !! <br> I'm GOWRI SANGEETHA V.</h1>
+        <p>I Am a WEB DESIGNER.</p>
+        <p>A web designer creates the layout and design of a website</p>
+        <button class="button-lrn">LEARN MORE</button>
+    </main>
+
+    <div class="image">
+        <img src="man2.jpg" alt="Gowri sangeetha">
+    </div>
+
+    <section id="home-details" class="description-section hidden">
+        <h2>Welcome to My Portfolio</h2>
+        <p>I have a strong command over both front-end and back-end technologies, allowing me to build complete and scalable applications.</p>
+    </section>
+
+    <section id="about-details" class="description-section hidden">
+        <h2>About Me</h2>
+        <p>I specialize in creating dynamic and responsive web applications. My journey as a developer has been driven by a passion for solving complex problems and building user-centric solutions.</p>
+    </section>
+
+    <section id="projects-details" class="description-section hidden">
+        <h2>My Projects</h2>
+        <ul>
+            <li><a href="https://example.com/project1" target="_blank">Portfolio Website</a></li>
+            <li><a href="https://example.com/project2" target="_blank">E-commerce Store</a></li>
+            <li><a href="https://example.com/project3" target="_blank">Blog Platform</a></li>
+            <li><a href="https://example.com/project4" target="_blank">Task Manager</a></li>
+        </ul>
+    </section>
+
+    <section id="skills-details" class="description-section hidden">
+        <h2>My Skills</h2>
+        <ol>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>MongoDB</li>
+            <li>REST APIs</li>
+            <li>Version Control (Git)</li>
+            <li>Responsive Design</li>
+            <li>UI/UX Design</li>
+        </ol>
+    </section>
+
+    <section id="contact-details" class="description-section hidden">
+        <h2>Contact Me</h2>
+        <ul>
+            <li>Email: <a href="mailto: gowrisangeethav@gmail.com">gowrisangeethav@gmail.com</a></li>
+            <li>Phone: <a href="tel:+1234567890">+1 234 567 890</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
+        </ul>
+    </section>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(btn => {
+            btn.addEventListener('click', function(event) {
+                event.preventDefault();
+                toggleSection(this.id.replace('-btn', '-details'));
+            });
+        });
+
+        function toggleSection(sectionId) {
+            document.querySelectorAll('.description-section').forEach(section => {
+                section.classList.toggle('hidden', section.id !== sectionId);
+            });
+        }
+    </script>
+</body>
+</html>
+
